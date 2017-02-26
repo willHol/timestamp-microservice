@@ -8,9 +8,9 @@ app.get('/', function(request, response) {
 });
 
 app.get('/:date', function(request, response) {
-	// Send the object created by dateParser as JSON with JSONP support
+	// Send the object created by dateParser as JSON
 	let dateObj = dateParser(request.params.date);
-	response.jsonp(dateObj);
+	response.json(dateObj);
 });
 
 app.listen(3000 || process.env.PORT);
