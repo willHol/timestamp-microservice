@@ -1,5 +1,4 @@
 const url = require('url');
-const dateParser = require('dateparser');
 
 const months = ['January', 'February', 'March', 'April',
 				'May', 'June', 'July', 'August', 'September',
