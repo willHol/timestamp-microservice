@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/willHol/timestamp-microservice#readme",
   "dependencies": {
+    "dateparser": "^1.0.6",
     "express": "^4.14.1"
   }
 }
