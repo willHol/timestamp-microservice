@@ -45,7 +45,7 @@ describe('Correctly formatted natural language dates:', function() {
 });
 
 describe('Incorrectly formatted natural language dates:', function() {
-	it('dec 07 1998', function(done) {
+	it('07 dec 1998', function(done) {
 		chai.request(server)
 		    .get('/dec 07 1998')
 		    .end(function(err, res){
