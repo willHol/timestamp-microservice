@@ -13,7 +13,7 @@ _Alternatively_, you may chose to provide the date as a **UNIX timestamp**:
 
 `912988800`
 
----
+___
 
 **Requests** may be made as follows:
 
