@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timestamp Microservice</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .colored-tab samp {
+        background-color: #f9f2f4;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .colored-tab-blue {
+        border: 1px solid #d3d3d3;
+        border-left: 5px solid #337ab7;
+        border-radius: 5px;
+        display: inline-block;
+
+        padding: 15px 20px;
+        margin: 10px 0px;
+      }
+      .colored-tab-red {
+        border: 1px solid #d3d3d3;
+        border-left: 5px solid #c7254e;
+        border-radius: 5px;
+        display: inline-block;
+
+        padding: 15px 20px;
+        margin: 10px 0px;
+      }
+      .page-header h5 {
+        color: grey;
+        font-weight: 200;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <div class="page-header">
+            <h1>Timestamp Microservice</h1>
+            <h5>A microservice which parses and transforms UNIX or Natural Language dates</h5>
+          </div>
+
+              
+          <p>The <strong>API</strong> can be provided either a <mark>natural language</mark> date in the form:
+            <code>7 December, 1998</code>
+          </p>
+            
+          <p><strong>Alternatively</strong>, you may chose to provide the date as a <mark>UNIX timestamp</mark>:
+            <code>912988800</code>
+          </p>
+
+          
+
+          <div class="colored-tab-red">
+            <p class="lead"><strong>Requests</strong> may be made as follows:</p>
+            <samp class="text-danger">https://timestamp-ms.herokuapp.com/December%207,%201998</samp><br><br>
+            <samp class="text-danger">https://timestamp-ms.herokuapp.com/912988800</samp>
+          </div>
+          <br>
+          <div class="colored-tab-blue">
+            <p class="lead">The <strong>API</strong> will return the following <strong>JSON response</strong> in both cases:</p>
+            <samp class="text-primary">{"unix":344995200, "natural":"December 7, 1980"}</samp>
+          </div>
+        </div>  
+      </div>
+    </div>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
