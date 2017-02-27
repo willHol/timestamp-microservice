@@ -1,11 +1,10 @@
 const express = require('express');
+const path = require('path');
 const dateParser = require('./utilities/date-parser');
 
 const app = express();
 
-app.get('/', function(request, response) {
-	response.send('hello');
-});
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.get('/:date', function(request, response) {
 	// Send the object created by dateParser as JSON
@@ -13,4 +12,6 @@ app.get('/:date', function(request, response) {
 	response.json(dateObj);
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function() {
+	console.log('Server started.');
+});

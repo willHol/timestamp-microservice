@@ -30,7 +30,6 @@ module.exports = (query) => {
 	let day = date.getDate();
 	let year = date.getFullYear();
 
-	console.log(month, day, year);
 	// The natural language string
 	let naturalString = `${month} ${day}, ${year}`;
 
