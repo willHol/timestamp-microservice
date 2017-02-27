@@ -25,8 +25,8 @@ The *API* will return the following **JSON response** in both cases:
 
 ```json
 {
-  "unix": 344995200, 
-  "natural": "December 7, 1980"
+  "unix": 912988800,
+  "natural": "December 7, 1998"
 }
 ```
 
