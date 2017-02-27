@@ -28,3 +28,11 @@ The *API* will return the following **JSON response** in both cases:
   "unix": 344995200, 
   "natural": "December 7, 1980"
 }
+```
+
+
+## Testing
+
+To run unit tests type:
+
+`npm test`
