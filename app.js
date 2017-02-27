@@ -12,6 +12,6 @@ app.get('/:date', function(request, response) {
 	response.json(dateObj);
 });
 
-app.listen(process.env.PORT || 3000, function() {
+module.exports = app.listen(process.env.PORT || 3000, function() {
 	console.log('Server started.');
 });

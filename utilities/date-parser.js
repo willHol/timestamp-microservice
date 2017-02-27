@@ -8,21 +8,23 @@ module.exports = (query) => {
 	const decodedQuery = decodeURIComponent(query);
 	let date;
 
-	// Create the date object
-	if (/\D/.test(decodedQuery)) {
-		// Natural Language
-		date = new Date(decodedQuery);
-	} else {
-		// UNIX Epoch
-		date = new Date(Number(decodedQuery) * 1000);
-	}
-
 	// The json response object
 	let obj = {unix: null, natural: null};
 
+	// Create the date object
+	if (/\D | ^[^-\D]/.test(decodedQuery)) {
+		// Natural Language
+		date = new Date(decodedQuery);
+		obj.unix = Math.round(date.getTime() / 1000) - date.getTimezoneOffset() * 60;
+	} else {
+		// UNIX Epoch
+		date = new Date(Number(decodedQuery) * 1000);
+		obj.unix = Math.round(date.getTime() / 1000);
+	}
+
 	// Short-circuit if the date is invalid or non-existent
 	if (date == 'Invalid Date') {
-		return obj;
+		return {unix: null, natural: null};
 	}
 
 	// The components of the natural language string
@@ -32,8 +34,6 @@ module.exports = (query) => {
 
 	// The natural language string
 	let naturalString = `${month} ${day}, ${year}`;
-
-	obj.unix = date.getTime() / 1000;
 	obj.natural = naturalString;
 
 	return obj;
