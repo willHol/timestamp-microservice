@@ -26,6 +26,6 @@ The _API_ will return the following *JSON response* in both cases:
 
 ```json
 {
-  "unix":344995200, 
-  "natural":"December 7, 1980"
+  "unix": 344995200, 
+  "natural": "December 7, 1980"
 }
